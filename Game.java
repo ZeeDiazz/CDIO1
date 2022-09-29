@@ -7,7 +7,7 @@ public class Game {
         die2 = new Die();
     }
 
-    public int playRound() {
+    public void playRound() {
         die1.roll();
         die2.roll();
     }
