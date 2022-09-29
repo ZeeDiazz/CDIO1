@@ -18,5 +18,7 @@ public class Player {
     public void addToScore(int points) {
         this.currentScore += points;
     }
-
+    public void setScore(int newScore) {
+		this.currentScore = newScore;
+    }
 }

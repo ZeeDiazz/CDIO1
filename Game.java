@@ -29,21 +29,27 @@ public class Game {
             }
 
             //if player score 40 points or more, then the game stops.
-            if (playingPlayer.getScore()>=40){
+            if (playingPlayer.getScore() >= 40){
                 if (diceAreSame()) {
                     break;
-                } else {
+                }
+				else {
                     System.out.println(playingPlayer.Name+"you only have to roll a pair to win");
                 }
             }
-           // if player rolls 1 & 1
-            if (diceSum()==2){
-                System.out.println("You rolled 2 1's, you lose all your points");
-                playingPlayer.setScore(0);
-            }else {
-                System.out.println(String.format("You currently have %d points\n", playingPlayer.getScore()));
-                currentPlayer = (currentPlayer + 1) % 2;
-            }
+			
+			if (diceAreSame()) {
+			    // if player rolls 1 & 1
+				if (diceSum() == 2){
+					System.out.println("You rolled 2 1's, you lose all your points");
+					playingPlayer.setScore(0);
+				}
+				System.out.println("You get another roll, because you rolled a pair");
+			}
+			else {
+				System.out.println(String.format("You currently have %d points\n", playingPlayer.getScore()));
+				currentPlayer = (currentPlayer + 1) % 2;
+			}
 		}
 		
 		Player winner = players[currentPlayer];
