@@ -9,4 +9,12 @@ public class Player {
         this.Name = in.nextLine();
         this.currentScore = 0;
     }
+
+    public int getScore() {
+        return currentScore;
+    }
+    public void addToScore(int points) {
+        this.currentScore += points;
+    }
+
 }
