@@ -36,8 +36,14 @@ public class Game {
                     System.out.println(playingPlayer.Name+"you only have to roll a pair to win");
                 }
             }
-            System.out.println(String.format("You currently have %d points\n", playingPlayer.getScore()));
-            currentPlayer=(currentPlayer+1)%2;
+           // if player rolls 1 & 1
+            if (diceSum()==2){
+                System.out.println("You rolled 2 1's, you lose all your points");
+                playingPlayer.setScore(0);
+            }else {
+                System.out.println(String.format("You currently have %d points\n", playingPlayer.getScore()));
+                currentPlayer = (currentPlayer + 1) % 2;
+            }
 		}
 		
 		Player winner = players[currentPlayer];
