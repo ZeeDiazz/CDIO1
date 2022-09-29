@@ -13,14 +13,16 @@ public class Game {
 
         Scanner in = new Scanner(System.in);
 
+		die1 = new Die();
+	    die2 = new Die();
 
-           die1 = new Die();
-           die2 = new Die();
+        while (true) {
+			Player playingPlayer = players[currentPlayer];
+			playRound();
+			printDiceResults();
+			playingPlayer.addToScore(diceSum());
+		}
 
-               for (int i = 0; i < 10; i++) { //just to see if the kode works
-                   playRound(die1, die2);
-                   printDiceResults();
-              } 
       }
 
         public static void playRound(Die die1, Die die2) {
