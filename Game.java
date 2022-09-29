@@ -14,7 +14,12 @@ public class Game {
 	    die2 = new Die();
 
         while (true) {
-			while (true) {
+			Player playingPlayer = players[currentPlayer];
+			playRound(die1, die2);
+			printDiceResults();
+			playingPlayer.addToScore(diceSum());
+
+            while (true) {
                 System.out.println(playingPlayer.Name + " your turn. Please type [r]oll to roll the dice");
                 String playerInput = in.nextLine();
                 if (playerInput.equals("roll") | playerInput.equals("r")) {
@@ -23,11 +28,6 @@ public class Game {
                 System.out.println("Invalid input");
             }
 
-			
-			Player playingPlayer = players[currentPlayer];
-			playRound(die1, die2);
-			printDiceResults();
-			playingPlayer.addToScore(diceSum());
             //if player score 40 points or more, then the game stops.
             if (playingPlayer.getScore()>=40){
                 break;
