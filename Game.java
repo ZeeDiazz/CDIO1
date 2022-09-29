@@ -30,7 +30,11 @@ public class Game {
 
             //if player score 40 points or more, then the game stops.
             if (playingPlayer.getScore()>=40){
-                break;
+                if (diceAreSame()) {
+                    break;
+                } else {
+                    System.out.println(playingPlayer.Name+"you only have to roll a pair to win");
+                }
             }
             System.out.println(String.format("You currently have %d points\n", playingPlayer.getScore()));
             currentPlayer=(currentPlayer+1)%2;
@@ -50,7 +54,9 @@ public class Game {
 	public static int diceSum() {
 		return die1.getFaceValue() + die2.getFaceValue();
 	}
-
+    public static boolean diceAreSame() {
+        return die1.getFaceValue() == die2.getFaceValue();
+    }
 	public static void printDiceResults() {
 		System.out.println(String.format("You rolled: %d & %d", die1.getFaceValue(), die2.getFaceValue()));
 	}
