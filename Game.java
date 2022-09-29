@@ -4,10 +4,8 @@ public class Game {
 
         static Player[] players = new Player[2];
 
-        int currentPlayer = 0;
-
-
     public static void main(String[] args) {
+        int currentPlayer = 0;
         players[0] = new Player(1); // for player 1
         players[1] = new Player(2); // for player 2
 
@@ -18,19 +16,18 @@ public class Game {
 
         while (true) {
 			Player playingPlayer = players[currentPlayer];
-			playRound();
+			playRound(die1, die2);
 			printDiceResults();
 			playingPlayer.addToScore(diceSum());
 		}
 
       }
-
         public static void playRound(Die die1, Die die2) {
                 die1.roll();
                 die2.roll();
         }
 
-        public int diceSum() {
+        public static int diceSum() {
 
            return die1.getFaceValue() + die2.getFaceValue();
         }
