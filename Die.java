@@ -1,20 +1,22 @@
 import java.util.Random;
 public class Die {
 
-    private int faceValue;
-    private Random Rng;
+        Private int faceValue;
+        Private Random rng;
 
-    //Contructor for class.
-    public Die(){
-        Rng = new Random();
-    }
+        //Construktur for Die class. 
 
-public  int roll() {
-    faceValue = Rng.nextInt(6) + 1;
-    return faceValue;
-}
-public int getFaceValue() {
-        return faceValue;
-}
-
+        public Die() {
+                Rng = new Random();
+        }
+        public int roll() {
+                FaceValue = rng.nextInt(6) + 1;
+                Return faceValue;
+        }
+        public void roll() {
+                FaceValue = rng.nextInt(6) + 1;
+        }
+        public int getFaceValue() {
+                Return faceValue;
+        }
 }
