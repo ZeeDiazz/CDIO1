@@ -9,10 +9,6 @@ public class Die {
         public Die() {
                 Rng = new Random();
         }
-        public int roll() {
-                FaceValue = rng.nextInt(6) + 1;
-                Return faceValue;
-        }
         public void roll() {
                 FaceValue = rng.nextInt(6) + 1;
         }

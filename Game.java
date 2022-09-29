@@ -25,7 +25,6 @@ Public class Game {
         }
 
         public void printDiceResult() {
-                System.out.println(“You rolled: %d & %d”, die1.getFaceValue(), die2.getFaceValue());
                 System.out.println(String.format(“You rolled: %d & %d”, die1.getFaceValue(), die2.getFaceValue()));
         }
 }
