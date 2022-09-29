@@ -1,12 +1,23 @@
+import java.util.Scanner;
 public class Game {
         private static Die die1, die2;
 
+        static Player[] players = new Player[2];
 
-       public static void main(String[] args) {
+        int currentPlayer = 0;
+
+
+    public static void main(String[] args) {
+        players[0] = new Player(1); // for player 1
+        players[1] = new Player(2); // for player 2
+
+        Scanner in = new Scanner(System.in);
+
+
            die1 = new Die();
            die2 = new Die();
 
-               for (int i = 0; i < 10; i++) {
+               for (int i = 0; i < 10; i++) { //just to see if the kode works
                    playRound(die1, die2);
                    printDiceResults();
               } 
