@@ -19,6 +19,10 @@ public class Game {
 			playRound(die1, die2);
 			printDiceResults();
 			playingPlayer.addToScore(diceSum());
+            //if player score 40 points or more, then the game stops.
+            if (playingPlayer.getScore()>=40){
+                break;
+            }
 		}
 
       }
