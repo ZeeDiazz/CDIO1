@@ -23,6 +23,8 @@ public class Game {
             if (playingPlayer.getScore()>=40){
                 break;
             }
+            System.out.println(String.format("You currently have %d points\n", playingPlayer.getScore()));
+            currentPlayer=(currentPlayer+1)%2;
 		}
 
       }
