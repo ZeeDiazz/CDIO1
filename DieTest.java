@@ -8,7 +8,7 @@ class DieTest {
     @Test
     public void dieRollTakesLessThan10ms() {
         Die d = new Die();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
             assertTimeout(Duration.ofMillis(10), d::roll);
         }
     }
